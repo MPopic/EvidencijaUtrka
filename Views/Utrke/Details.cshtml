@@ -1,0 +1,83 @@
+﻿@model EvidencijaUtrka.Models.Utrka
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> signInManager
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalji</h1>
+
+<div>
+    <h4>Utrka</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Naziv)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Naziv)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Duljina)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Duljina)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Datum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Datum)
+        </dd>
+        <dd class="col-sm-2">
+            Unesi rezultat:
+        </dd>
+        <dt class="col-sm-10">
+            <a asp-action="Create" asp-controller="UtrkaRezultati" asp-route-id="@Model.UtrkaID">Odaberi za dodavanje</a>
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rezultati)
+        </dt>
+    </dl>
+    <table class="table" border="1">
+        <thead>
+            <tr>
+                <th>
+                    Ime
+                </th>
+                <th>
+                    Prezime
+                </th>
+                <th>
+                    Vrijeme
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Rezultati)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prezime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RezultatVrijeme)
+                </td>
+                @if (signInManager.IsSignedIn(User))
+                {
+                    <td>
+                        <a asp-action="Delete" asp-controller="UtrkaRezultati" asp-route-id="@item.UtrkaRezultatID">Obriši</a>
+                    </td>
+                }
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

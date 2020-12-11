@@ -1,0 +1,43 @@
+﻿@model EvidencijaUtrka.Models.UtrkaRezultat
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<h4>Unesite svoj rezultat</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input hidden asp-for="UtrkaID" value="@ViewData["UtrkaId"]" />
+            <div class="form-group">
+                <label asp-for="Ime" class="control-label"></label>
+                <input asp-for="Ime" class="form-control" />
+                <span asp-validation-for="Ime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Prezime" class="control-label"></label>
+                <input asp-for="Prezime" class="form-control" />
+                <span asp-validation-for="Prezime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RezultatVrijeme" class="control-label"></label>
+                <input asp-for="RezultatVrijeme" class="form-control" />
+                <span asp-validation-for="RezultatVrijeme" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <input hidden class="form-check-input" asp-for="Sluzben" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kreiraj" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<EvidencijaUtrka.Models.Utrka>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista Utrka - Administracija</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Naziv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Duljina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Datum)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Naziv)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Duljina)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Datum)
+                </td>
+                <td>
+                    <a asp-action="DetailsAdministracija" asp-route-id="@item.UtrkaID">Rezultati</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

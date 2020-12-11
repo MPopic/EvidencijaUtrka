@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvidencijaUtrka", "EvidencijaUtrka.csproj", "{4D328197-7D46-4869-8B94-354113FB46BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D328197-7D46-4869-8B94-354113FB46BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D328197-7D46-4869-8B94-354113FB46BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D328197-7D46-4869-8B94-354113FB46BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D328197-7D46-4869-8B94-354113FB46BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {78747A68-039B-4CA4-B1AC-7471BB1435F5}
+	EndGlobalSection
+EndGlobal

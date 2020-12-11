@@ -1,0 +1,35 @@
+﻿@model UtrkaRezultat
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>Jeste li sigurni za brisanje?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Prezime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Prezime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RezultatVrijeme)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RezultatVrijeme)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="UtrkaRezultatID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="DetailsAdministracija" asp-controller="Utrke" asp-route-id="@Model.UtrkaID" >Povratak</a>
+    </form>
+</div>
